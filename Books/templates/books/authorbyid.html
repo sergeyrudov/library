@@ -1,0 +1,5 @@
+<h2>
+{% for i in author_id.book_set.all %}
+    <a href="/authors/book-info-{{ i.id }}">{{ i.book_name }}</a>
+{% endfor %}
+</h2>

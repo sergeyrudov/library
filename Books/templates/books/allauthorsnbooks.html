@@ -1,0 +1,9 @@
+<h2>Количество авторов - {{ author|length }}</h2>
+<h2>Количество книг - {{ allbooks|length }}</h2>
+<h3>
+{% for i in author %}
+<li>
+    <a href="/authors/author-id-{{ i.id }}">{{ i.name }} {{ i.surname }} </a>
+    ({{ i.book_set.all | length }})  </li>
+{% endfor %}
+</h3>
