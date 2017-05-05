@@ -80,7 +80,24 @@ def book_info(request, id):
     context = {'books': book}
     return render(request,'Books/bookinfo.html', context)
 
+def create_author(request):
+    if request.GET:
+        author = Author()
+        author.name = request.GET['name']
+        author.surname = request.GET['surname']
+        author.save()
+        return HttpResponse ('Все ок')
+    return HttpResponse ('Вы не ввели данные')
 
+def addbook(request, id):
+    if request.GET:
+        avtor = Author.objects.get(id=id)
+        book = Book()
+        book.book_name = request.GET['book_name']
+        book.release_date = request.GET['release_date']
+        book.author = avtor
+        book.save()
+    return HttpResponse('книга добавлена')
 
 
 

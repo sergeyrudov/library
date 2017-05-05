@@ -1,5 +1,5 @@
-<h2>Количество авторов - {{ author|length }}</h2>
-<h2>Количество книг - {{ allbooks|length }}</h2>
+<h2>Quantity authors- {{ author|length }}</h2>
+<h2>Quantity books- {{ allbooks|length }}</h2>
 <h3>
 {% for i in author %}
 <li>
@@ -7,3 +7,11 @@
     ({{ i.book_set.all | length }})  </li>
 {% endfor %}
 </h3>
+
+<form action="/authors/createauthor" method="get">
+<p> Name author </p>
+<input type="text" name="name" required>
+<p>Surname author</p>
+<input type = "text" name = "surname" required>
+<input type = "submit" value="Отправить">
+</form>

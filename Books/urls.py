@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^all', views.author_list),
     url(r'^author-id-([0-9]+)', views.author_id),
     url(r'^book-info-([0-9]+)', views.book_info),
+    url(r'^createauthor$', views.create_author),
+    url(r'^addbook/([0-9]+)', views.addbook),
 ]
 
 

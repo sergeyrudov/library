@@ -4,3 +4,10 @@
     <li> {{ books.author }} </li>
      <a href="/authors/author-id-{{ books.author.id }}">назад</a>
 </h2>
+
+
+<form action="/authors/addbook/{{ author_id.id }}" method="get">
+<input type="text" name="book_name" required>
+<input type="date" name="release_date" >
+    <input type = "submit" value="Отправить">
+</form>
