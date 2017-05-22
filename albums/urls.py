@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^all-authors/', views.book_request),
+    url(r'^$', views.Albums_display),
 ]
 
 
