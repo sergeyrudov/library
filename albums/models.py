@@ -14,10 +14,13 @@ class Album(models.Model):
 
 class Photo(models.Model):
     alt = models.TextField()
-    img = models.ImageField()
+    img = models.ImageField(upload_to='albums/static/albums/photos')
     date_created = models.DateTimeField('Date created', auto_now_add=True, auto_created=True)
     date_change = models.DateTimeField('Date change', auto_now_add=True, auto_created=True)
     album = models.ForeignKey(Album)
+
+    def static_url(self):
+        return self.url.split('/', 2)[2]
 
     def __str__(self):
         return self.alt
