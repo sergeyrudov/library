@@ -19,7 +19,7 @@ class Photo(models.Model):
     date_change = models.DateTimeField('Date change', auto_now_add=True, auto_created=True)
     album = models.ForeignKey(Album)
 
-    def static_url(self):
+    def get_url_img(self):
         return self.url.split('/', 2)[2]
 
     def __str__(self):

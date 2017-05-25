@@ -3,5 +3,5 @@
 {% load static %}
 <p><img src='{% static 'albums/^CFC36432A1161AE06D332058F9C26BCF4930DC3B1E72D62B83^pimgpsh_fullsize_distr.jpg' %}'alt='image'></p>
 {% for i in albums %}
-<h2> {{ i.title }}</h2>
+<h2> <a href="album/{{ i.id }}">{{ i.title }} {{ i.descr }} </a></h2>
 {% endfor %}
