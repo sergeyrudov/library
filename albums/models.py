@@ -20,7 +20,10 @@ class Photo(models.Model):
     album = models.ForeignKey(Album)
 
     def get_url_img(self):
-        return self.url.split('/', 2)[2]
+        try:
+            return '/' + self.img.url.split('/', 1)[1]
+        except IndexError:
+            return ''
 
     def __str__(self):
         return self.alt

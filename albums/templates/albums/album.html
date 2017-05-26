@@ -1,7 +1,7 @@
-{% load staticfiles %}
+{% load static %}
 <h3> {{ album.title }} </h3>
 <h3> {{ album.descr }} </h3>
 {% for i in album.photo_set.all %}
-    <h3> <img src="{% static '{{ i.get_url_img }}' %}" alt="i.alt"> </h3>
+    <h3> <img src={{ i.get_url_img }} alt={{ i.alt }}> </h3>
 
 {% endfor %}
